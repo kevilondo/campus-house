@@ -8,12 +8,9 @@
 @section('body')
 
     <div class="welcome">
-        <div class="welcome-text">
-            <h1 class="welcome-title">Welcome to Campus House</h1>
+        <h1 class="welcome-title">Welcome to Campus House</h1>
 
-            <h2 style="color: white;">Find accomodations easier and faster</h2>
-        </div>
-        
+        <h2 style="color: white;">Find accomodations easier and faster</h2>
         <img src="/assets/welcome.jpeg" class="welcome-bg-img" alt="Welcome to Campus House">
     </div>
     

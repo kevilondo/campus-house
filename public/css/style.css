@@ -34,12 +34,7 @@ body {
 .welcome {
     margin-top: 10%;
     margin-bottom: 10%;
-    height: 25em;
-}
-
-.welcome-text {
-    align-content: center;
-    justify-content: center;
+    height: 22em;
 }
 
 .welcome-bg-img {
