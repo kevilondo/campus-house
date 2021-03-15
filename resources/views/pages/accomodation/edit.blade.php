@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="rent">Rent</label>
+                    <label for="rent">Rent (in Rand)</label>
 
                     <input id="rent" type="number" class="form-control @error('rent') is-invalid @enderror" name="rent" value="{{ $accomodation->rent }}"  autocomplete="rent" autofocus>
 

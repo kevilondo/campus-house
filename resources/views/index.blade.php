@@ -8,15 +8,19 @@
 @section('body')
 
     <div class="welcome">
-        <h1 class="welcome-title">Welcome to Campus House</h1>
+        <div class="welcome-text">
+            <h1 class="welcome-title">Welcome to Campus House</h1>
 
-        <h2>Find accomodations easier and faster</h2>
+            <h2 style="color: white;">Find accomodations easier and faster</h2>
+        </div>
+        
+        <img src="/assets/welcome.jpeg" class="welcome-bg-img" alt="Welcome to Campus House">
     </div>
     
 
     <div class="container mt-5">       
 
-        <h3 class="title">Latest accomodations</h3>
+        <h3 class="title">Latest accomodations</h3> <br>
         <div class="row">
             @foreach ($accomodations as $accomodation)
                 
