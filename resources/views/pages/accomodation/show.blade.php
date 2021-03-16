@@ -10,7 +10,13 @@
         <div class="row">
             <div class="col-md-7">
                 <h4>{{$accomodation->name}}</h4>
-                <img src="{{$accomodation->thumbnail->path}}" width="100%">
+
+                @if (isset($accomodation->thumbnail->path))
+                    <img src="{{$accomodation->thumbnail->path}}" width="100%">
+                @else
+                    <img src="/assets/no_image.png" alt="no_image" width="100%">
+                @endif
+
                 <div class="container mt-3">
                     <div class="card card-default">
                         <div class="card-title">
@@ -42,8 +48,8 @@
                     <div class="card card-default">
                         <div class="card-title container"> <b>Landloard contact details</b> </div>
                         <div class="card-body">
-                            <p>E-mail: {{$accomodation->user->email}}</p>
-                            <p>Phone number: {{$accomodation->user->phone_number}}</p>
+                            <p> <b> E-mail: </b> {{$accomodation->user->email}}</p>
+                            <p> <b> Phone number: </b> {{$accomodation->user->phone_number}}</p>
                         </div>
                     </div>
                 </div>

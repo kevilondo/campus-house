@@ -31,11 +31,15 @@ Route::get('/edit/{id}', 'AccomodationController@edit');
 
 Route::post('/edit/{id}', 'AccomodationController@update');
 
-Route::get('/edit/pictures/{id}', 'AccomodationController@edit_pictures');
+Route::get('/edit/pictures/{id}', 'ImageController@edit_pictures');
 
 Route::get('/profile', 'UserController@profile');
 
 Route::post('/update_profile', 'UserController@update_profile');
+
+Route::post('/add_images/{id}', 'ImageController@add_images');
+
+Route::delete('/delete/{id}', 'AccomodationController@delete');
 
 Auth::routes();
 

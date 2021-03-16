@@ -74,9 +74,9 @@
                 <div class="form-group">
                     <label for="picture">Upload pictures</label>
 
-                    <input id="picture" type="file" class="form-control @error('picture') is-invalid @enderror" name="pictures[]" multiple value="{{ old('picture') }}"  autocomplete="picture" autofocus>
+                    <input id="picture" type="file" class="form-control @error('pictures') is-invalid @enderror" name="pictures[]" multiple value="{{ old('pictures') }}"  autocomplete="pictures" autofocus>
 
-                    @error('picture')
+                    @error('pictures')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

@@ -64,7 +64,11 @@
                                 
                                 <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card card-hover card-default">
-                                        <img src="{{$accomodation->thumbnail->path}}" height="360px">
+                                        @if (isset($accomodation->thumbnail->path))
+                                            <img src="{{$accomodation->thumbnail->path}}" height="360px">
+                                        @else
+                                            <img src="/assets/no_image.png" alt="no_image" height="360px">
+                                        @endif
                                         <div class="card-title"><b> {{$accomodation->name}} </b> </div>
                                         <div class="card-body">
                                             <p>{{$accomodation->address}}</p>

@@ -7,7 +7,9 @@
 @section('body')
    
 
-    <div class="container mt-5">       
+    <div class="container mt-5"> 
+        
+        @include('inc.message')
 
         <h3 class="title">My accomodations</h3>
         @if (count($accomodations) > 0)
@@ -16,18 +18,32 @@
                     
                     <div class="col-md-4 col-sm-6 mb-4">
                         <div class="card card-hover card-default">
-                            <img src="{{$accomodation->thumbnail->path}}" height="360px">
+
+                            @if (isset($accomodation->thumbnail->path))
+                                <img src="{{$accomodation->thumbnail->path}}" height="360px">
+                            @else
+                                <img src="/assets/no_image.png" alt="no_image" height="360px">
+                            @endif
+
                             <div class="card-title"><b> {{$accomodation->name}} </b> </div>
+
                             <div class="card-body">
                                 <p>{{$accomodation->address}}</p>
                             </div>
+
                             <div class="card-footer">
-                                <a class="edit" href="/edit/{{$accomodation->id}}">
-                                    <small> Edit </small>
-                                </a>
-                                <a class="delete" href="/accomodation/{{$accomodation->id}}">
-                                    <small> Delete </small>
-                                </a>
+                                <form action="/delete/{{$accomodation->id}}" method="POST">
+                                    @csrf
+                                    @method('Delete')
+
+                                    <a class="btn btn-info" href="/edit/{{$accomodation->id}}">
+                                        <i class="fas fa-edit"> Edit </i>
+                                    </a>
+
+                                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
+                                        <i class="fas fa-trash"> Delete </i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

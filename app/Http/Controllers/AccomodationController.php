@@ -11,7 +11,7 @@ class AccomodationController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['show', 'filter']);
-        $this->middleware('edit')->only(['edit']);
+        $this->middleware('edit')->only(['edit', 'update', 'delete']);
     }
 
     public function form()
@@ -26,7 +26,8 @@ class AccomodationController extends Controller
             'address' => 'required',
             'rent' => 'required',
             'room_type' => 'required',
-            'picture. *' => 'required|mimes:jpg, jpeg, png'
+            'pictures' => 'required',
+            'pictures. *' => 'mimes:jpg, jpeg, png'
         ]);
 
         $accomodation = Accomodation::create([
@@ -127,5 +128,22 @@ class AccomodationController extends Controller
         ]);
 
         return redirect('/edit/'. $id)->with('success', 'Your property has been edited');
+    }
+
+    public function delete($id)
+    {
+        $accomodation = Accomodation::find($id);
+
+        $full_path = realpath($_SERVER["DOCUMENT_ROOT"]);
+
+        foreach ($accomodation->image as $image)
+        {
+            if (unlink($full_path. $image->path))
+            {
+                $accomodation->delete();
+            }
+        }
+
+        return redirect()->back()->with('success', 'Your accomodation has been deleted');
     }
 }
