@@ -25,7 +25,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="/profile">Profile</a></li>
                         <li><a class="dropdown-item" href="/my_accomodations">My Accomodations</a></li>
-                        <li><a class="dropdown-item" href="/my_accomodations">Payment Instructions</a></li>
+                        <li><a class="dropdown-item" href="/payment_instructions">Payment Instructions</a></li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

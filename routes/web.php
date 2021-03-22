@@ -41,6 +41,16 @@ Route::post('/add_images/{id}', 'ImageController@add_images');
 
 Route::delete('/delete/{id}', 'AccomodationController@delete');
 
+Route::get('/payment_instructions', 'PagesController@payment_instructions');
+
+Route::get('/pay_now', 'PayfastController@pay_now');
+
+Route::get('/success', 'PayfastController@success_page');
+
+Route::get('/cancel', 'PayfastController@cancel_page');
+
+Route::post('/notify/{id}', 'PayfastController@notify');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

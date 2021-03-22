@@ -12,6 +12,7 @@ class AccomodationController extends Controller
     {
         $this->middleware('auth')->except(['show', 'filter']);
         $this->middleware('edit')->only(['edit', 'update', 'delete']);
+        $this->middleware('hasPaid')->only(['form', 'add']);
     }
 
     public function form()
