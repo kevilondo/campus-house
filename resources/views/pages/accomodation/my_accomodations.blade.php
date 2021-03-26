@@ -37,11 +37,11 @@
                                     @method('Delete')
 
                                     <a class="btn btn-info" href="/edit/{{$accomodation->id}}">
-                                        <i class="fas fa-edit"> Edit </i>
+                                        <span> <i class="fas fa-edit"></i> Edit </span>
                                     </a>
 
                                     <button class="btn btn-danger" onclick="return confirm('Are you sure?')">
-                                        <i class="fas fa-trash"> Delete </i>
+                                        <span> <i class="fas fa-trash"></i>Delete </span>
                                     </button>
                                 </form>
                             </div>

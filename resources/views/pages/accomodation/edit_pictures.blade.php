@@ -18,9 +18,14 @@
                         <img src="{{$image->path}}" height="360px">
 
                         <div class="card-footer">
-                            <a class="delete" href="/accomodation/{{$image->id}}">
-                                <small> Delete </small>
-                            </a>
+                            <form action="/delete_image/{{$image->id}}" method="POST">
+                                @csrf
+                                @method('Delete')
+
+                                <button class="btn btn-danger" href="/delete_image/{{$image->id}}" onclick="return confirm('Are you sure?')">
+                                    <span> <i class="fas fa-trash"></i> Delete </span>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

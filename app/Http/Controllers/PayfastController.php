@@ -15,10 +15,10 @@ class PayfastController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('notify');
 
         //redirect back to payment instruction if the user has already paid, proceed if user has not paid
-        $this->middleware('hasNotPaid');
+        $this->middleware('hasNotPaid')->except(['notify', 'success_page']);
     }
 
     private function generateSignature($data, $passPhrase = null) {
@@ -48,9 +48,9 @@ class PayfastController extends Controller
             // Merchant details
             'merchant_id' => '10000100',
             'merchant_key' => '46f0cd694581a',
-            'return_url' => 'http://ea6a32689154.ngrok.io//success',
-            'cancel_url' => 'http://ea6a32689154.ngrok.io//cancel',
-            'notify_url' => 'http://ea6a32689154.ngrok.io//notify/'. auth()->user()->id,
+            'return_url' => 'http://ccaa7b3fdd50.ngrok.io/success',
+            'cancel_url' => 'http://ccaa7b3fdd50.ngrok.io/cancel',
+            'notify_url' => 'http://ccaa7b3fdd50.ngrok.io/notify/'. auth()->user()->id,
             // Buyer details
             'name_first' => auth()->user()->first_name,
             'name_last'  => auth()->user()->surname,

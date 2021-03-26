@@ -64,4 +64,18 @@ class ImageController extends Controller
 
         return redirect('/edit/pictures/'. $id)->with('success', 'Images have been added');
     }
+
+    public function delete_image($id)
+    {
+        $image = Image::find($id);
+
+        $full_path = realpath($_SERVER["DOCUMENT_ROOT"]);
+        
+        if (unlink($full_path. $image->path))
+        {
+            $image->delete();
+        }
+
+        return redirect()->back()->with('success', 'The picture has been deleted');
+    }
 }

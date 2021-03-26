@@ -83,7 +83,3 @@ body {
 .edit:hover, .delete:hover {
     text-decoration: underline;
 }
-
-.delete {
-    color: red;
-}
