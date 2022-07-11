@@ -46,8 +46,8 @@ class PayfastController extends Controller
         $cartTotal = 150.00;// This amount needs to be sourced from your application
         $data = array(
             // Merchant details
-            'merchant_id' => '10000100',
-            'merchant_key' => '46f0cd694581a',
+            'merchant_id' => '10026633',
+            'merchant_key' => 'cg3o7a16cgf04',
             'return_url' => 'http://ccaa7b3fdd50.ngrok.io/success',
             'cancel_url' => 'http://ccaa7b3fdd50.ngrok.io/cancel',
             'notify_url' => 'http://ccaa7b3fdd50.ngrok.io/notify/'. auth()->user()->id,
