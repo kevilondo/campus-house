@@ -41,13 +41,12 @@ class PayfastController extends Controller
     public function pay_now()
     {
         /* Payfast integration, this block of code returns a more secured custom form */
-
         // Construct variables
         $cartTotal = 150.00;// This amount needs to be sourced from your application
         $data = array(
             // Merchant details
-            'merchant_id' => '10026633',
-            'merchant_key' => 'cg3o7a16cgf04',
+            'merchant_id' => env('PAYFAST_MERCHANT_ID'),
+            'merchant_key' => env('PAYFAST_MERCHANT_KEY'),
             'return_url' => 'http://ccaa7b3fdd50.ngrok.io/success',
             'cancel_url' => 'http://ccaa7b3fdd50.ngrok.io/cancel',
             'notify_url' => 'http://ccaa7b3fdd50.ngrok.io/notify/'. auth()->user()->id,
